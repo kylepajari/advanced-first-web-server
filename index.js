@@ -79,10 +79,10 @@ app.delete("/users/:userId", (req, res) => {
   });
 
   //remove user from users list
-  state.users.splice(i, 1);
+  state.users[i].isActive = false;
 
   //show users to client
-  res.send(state.users);
+  res.send("deleted");
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
